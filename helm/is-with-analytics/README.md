@@ -26,7 +26,7 @@ steps provided in the following quick start guide.<br><br>
 >In the context of this document, <br>
 >* `KUBERNETES_HOME` will refer to a local copy of the [`wso2/kubernetes-is`](https://github.com/wso2/kubernetes-is/)
 Git repository. <br>
->* `HELM_HOME` will refer to `<KUBERNETES_HOME>/helm/is-with-analytics`. <br>
+>* `HELM_HOME` will refer to `${KUBERNETES_HOME}/helm/is-with-analytics`. <br>
 
 ##### 1. Clone the Kubernetes Resources for WSO2 Identity Server Git repository.
 
@@ -37,7 +37,7 @@ git clone https://github.com/wso2/kubernetes-is.git
 ##### 2. Setup a Network File System (NFS) to be used for persistent storage.
 
 Create and export unique directories within the NFS server instance for each of the following Kubernetes Persistent Volume
-resources defined in the `<HELM_HOME>/is-with-analytics/values.yaml` file:
+resources defined in the `${HELM_HOME}/is-with-analytics/values.yaml` file:
 
 * `sharedDeploymentLocationPath`
 * `sharedTenantsLocationPath`
@@ -56,10 +56,10 @@ Grant read-write-execute permissions to the `wso2carbon` user, for each of the p
 
 ##### 3. Provide configurations.
 
-a. The default product configurations are available at `<HELM_HOME>/is-with-analytics/confs` folder. Change the
+a. The default product configurations are available at `${HELM_HOME}/is-with-analytics/confs` folder. Change the
 configurations as necessary.
 
-b. Open the `<HELM_HOME>/is-with-analytics/values.yaml` and provide the following values.
+b. Open the `${HELM_HOME}/is-with-analytics/values.yaml` and provide the following values.
 
 | Parameter                       | Description                                                                               |
 |---------------------------------|-------------------------------------------------------------------------------------------|
@@ -78,7 +78,7 @@ b. Open the `<HELM_HOME>/is-with-analytics/values.yaml` and provide the followin
 ##### 4. Deploy product database(s) using MySQL in Kubernetes.
 
 ```
-helm install --name wso2is-with-analytics-rdbms-service -f <HELM_HOME>/mysql/values.yaml stable/mysql --namespace <NAMESPACE>
+helm install --name wso2is-with-analytics-rdbms-service -f ${HELM_HOME}/mysql/values.yaml stable/mysql --namespace ${NAMESPACE}
 ```
 
 `NAMESPACE` should be same as in `step 3.b`.
@@ -88,7 +88,7 @@ For a serious deployment (e.g. production grade setup), it is recommended to con
 ##### 5. Deploy WSO2 Identity Server with WSO2 Identity Server Analytics.
 
 ```
-helm install --name <RELEASE_NAME> <HELM_HOME>/is-with-analytics --namespace <NAMESPACE>
+helm install --name ${RELEASE_NAME} ${HELM_HOME}/is-with-analytics --namespace ${NAMESPACE}
 ```
 
 `NAMESPACE` should be same as in `step 3.b`.
