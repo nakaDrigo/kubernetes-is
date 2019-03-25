@@ -24,7 +24,7 @@ steps provided in the following quick start guide.<br><br>
   
 ## Quick Start Guide
 >In the context of this document, <br>
->* `KUBERNETES_HOME` will refer to a local copy of the [`wso2/kubernetes-is`](https://github.com/wso2/kubernetes-is/)
+>* `KUBERNETES_HOME` will refer to a local copy of the [`${HOME}/kubernetes-is`](https://github.com/wso2/kubernetes-is/)
 Git repository. <br>
 >* `HELM_HOME` will refer to `${KUBERNETES_HOME}/helm/is-with-analytics`. <br>
 
